@@ -22,12 +22,12 @@ namespace pr11
                     Console.WriteLine("\nХотите ли бы вы запустить программу для подсчёта количества символов x в строке? (Да/Нет)");
                     string a = Console.ReadLine();
 
-                    if (a == "Нет") // если a = "нет", то завершаем программу
+                    if (a == "Нет")
                     {
                         Console.WriteLine("Программа завершена.\nДо свидания!");
                         break;
                     }
-                    else if (a == "Да") // иначе, если
+                    else if (a == "Да") 
                     {
                         Console.Write("\nВведите строку: ");
                         string S = Console.ReadLine();
@@ -35,9 +35,12 @@ namespace pr11
                         char symbol = char.Parse(Console.ReadLine());
                         int i = 0;
 
-                        foreach (char c in S) // выполнение операторов для каждого элемента в экземпляре типа
+                        S = S.ToLower();
+                        symbol = char.ToLower(symbol);
+
+                        foreach (char c in S)
                         {
-                            if (c == symbol) // если c равен symbol, то
+                            if (c == symbol)
                             {
                                 i++;
                             }
@@ -46,7 +49,7 @@ namespace pr11
                         Console.WriteLine($"\nКоличество символов '{symbol}' в строке: {i}");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
-                    else // иначе
+                    else
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Введите Да или Нет! Либо Выход. (Ввод ответа требуется с большой буквы)");
@@ -54,19 +57,20 @@ namespace pr11
                         continue;
                     }
                 }
-                catch (FormatException e) // частное исключение
+                catch (FormatException fe)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nОшибка ввода \n" + e.Message); // вывод ошибки на экран
+                    Console.WriteLine($"\nОшибка ввода \n" + fe.Message);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                catch (Exception e) // общее исключение
+                catch (Exception e)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nОшибка ввода \n" + e.Message); // вывод ошибки на экран
+                    Console.WriteLine($"\nОшибка ввода \n" + e.Message);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
         }
     }
 }
+// Александр Пушкин начал писать свои первые произведения уже в семь лет.
