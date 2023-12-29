@@ -27,32 +27,29 @@ namespace pr11
                         Console.WriteLine("Программа завершена.\nДо свидания!");
                         break;
                     }
-                    else if (a == "Да") 
+                    else if (a == "Да")
                     {
                         Console.Write("\nВведите строку: ");
                         string S = Console.ReadLine();
                         Console.Write("\nВведите символ для подсчета: ");
                         char symbol = char.Parse(Console.ReadLine());
-                        int i = 0;
+                        int count = 0;
 
                         S = S.ToLower();
                         symbol = char.ToLower(symbol);
 
                         foreach (char c in S)
                         {
-                            if (c == symbol)
-                            {
-                                i++;
-                            }
+                            if (c == symbol) count++;
                         }
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"\nКоличество символов '{symbol}' в строке: {i}");
+                        Console.WriteLine($"\nКоличество символов '{symbol}' в строке: {count}");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("Введите Да или Нет! Либо Выход. (Ввод ответа требуется с большой буквы)");
+                        Console.WriteLine("Введите Да или Нет! (Ввод ответа требуется с большой буквы)");
                         Console.ForegroundColor = ConsoleColor.White;
                         continue;
                     }
@@ -73,4 +70,3 @@ namespace pr11
         }
     }
 }
-// Александр Пушкин начал писать свои первые произведения уже в семь лет.
