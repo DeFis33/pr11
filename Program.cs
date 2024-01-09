@@ -32,11 +32,11 @@ namespace pr11
                         Console.Write("\nВведите строку: ");
                         string S = Console.ReadLine();
                         Console.Write("\nВведите символ для подсчета: ");
-                        char symbol = char.Parse(Console.ReadLine());
+                        char symbol = Char.Parse(Console.ReadLine());
                         int count = 0;
 
                         S = S.ToLower();
-                        symbol = char.ToLower(symbol);
+                        symbol = Char.ToLower(symbol);
 
                         foreach (char c in S)
                         {
